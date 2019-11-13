@@ -10,19 +10,20 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class Intake extends Command {
+public class intakeIn extends Command {
   private double speed;
-  public Intake(double speed) {
+  public intakeIn(double speed) {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.intake);
   }
 
-  public Intake() {
+  public intakeIn() {
 }
 
 // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.intakeIN
   }
 
   // Called repeatedly when this Command is scheduled to run
