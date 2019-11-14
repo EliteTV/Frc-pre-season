@@ -40,11 +40,15 @@ public class IntakeSubSystem extends Subsystem {
       intakeLM.set(ControlMode.PercentOutput, -intakeSpeed);
       intakeRM.set(ControlMode.PercentOutput, intakeSpeed);
     }
+    public void intakeWristUp(){
+      
+    }
     
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     //setDefaultCommand(new intakeIn());
+
   }
 }
