@@ -28,13 +28,19 @@ public class IntakeSubSystem extends Subsystem {
     
     public void setPower(double intakePower){
       intakeLM.set(intakePower);
+      intakeRM.set(intakePower);
     }
 
     public void intakeIn(){
       intakeLM.set(ControlMode.PercentOutput, intakeSpeed);
+      intakeRM.set(ControlMode.PercentOutput, -intakeSpeed);
     }
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+    
+    public void intakeOut(){
+      intakeLM.set(ControlMode.PercentOutput, -intakeSpeed);
+      intakeRM.set(ControlMode.PercentOutput, intakeSpeed);
+    }
+    
 
   @Override
   public void initDefaultCommand() {

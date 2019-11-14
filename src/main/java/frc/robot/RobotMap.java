@@ -48,7 +48,7 @@ public class RobotMap {
 	  public static final int leftStickY = 1;
 	  public static final int leftStickX = 0;
 	  public static final int rightStickX = 4;
-  	
+  	public static final int driveAButton = 0;
 	
 
   //Other
@@ -56,5 +56,6 @@ public class RobotMap {
     public static double maxMoveSpeed = .5;
     public static double minMoveSpeed = -.5;
     public static final double intakeSpeed = 0.8;
+	  
 
 }
