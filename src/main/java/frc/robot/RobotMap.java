@@ -35,7 +35,8 @@ public class RobotMap {
     public static int leftSlavePort = 1;
     public static int rightMasterPort = 2;
     public static int rightSlavePort = 3;
-    public static final int intake = 4;
+    public static final int intakeLM = 4;
+    public static final int intakeRM = 0;
 
   //USB
     //drive joystck
@@ -45,13 +46,15 @@ public class RobotMap {
   //Button / Axxes
     public static final int driveXButton = 3;
 	  public static final int leftStickY = 1;
-	public static final int leftStickX = 0;
-	public static final int rightStickX = 4;
+	  public static final int leftStickX = 0;
+	  public static final int rightStickX = 4;
+  	
 	
 
   //Other
     //Moter Speed
     public static double maxMoveSpeed = .5;
     public static double minMoveSpeed = -.5;
+    public static final double intakeSpeed = 0.8;
 
 }

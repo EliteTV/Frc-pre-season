@@ -11,10 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class intakeIn extends Command {
-  private double speed;
+  
   public intakeIn(double speed) {
-    // Use requires() here to declare subsystem dependencies
-    requires(Robot.intake);
+    
+    requires(Robot.IntakeSubSystem);
   }
 
   public intakeIn() {
@@ -23,12 +23,15 @@ public class intakeIn extends Command {
 // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.intakeIN
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.IntakeSubSystem.intakeIn();
+
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()

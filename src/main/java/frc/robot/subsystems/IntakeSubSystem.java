@@ -8,28 +8,37 @@
 package frc.robot.subsystems;
 
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
+
 /**
  * Add your docs here.
  */
 
-public class Intake extends Subsystem {
-    WPI_VictorSPX intake = new WPI_VictorSPX(RobotMap.intake);
-
+public class IntakeSubSystem extends Subsystem {
+    
+  public double intakeSpeed = RobotMap.intakeSpeed;
+  
+  WPI_VictorSPX intakeLM = new WPI_VictorSPX(RobotMap.intakeLM);
+  WPI_VictorSPX intakeRM = new WPI_VictorSPX(RobotMap.intakeRM);
+    
     public void setPower(double intakePower){
-      intake.set(intakePower);
+      intakeLM.set(intakePower);
     }
 
+    public void intakeIn(){
+      intakeLM.set(ControlMode.PercentOutput, intakeSpeed);
+    }
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    //setDefaultCommand(new intakeIn());
   }
 }

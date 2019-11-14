@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveSubSystem;
-import frc.robot.subsystems.Intake;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,7 +24,7 @@ import frc.robot.subsystems.Intake;
  */
 public class Robot extends TimedRobot {
   public static DriveSubSystem driveSubSystem = new DriveSubSystem();
-  public static Intake intake = new Intake();
+  public static frc.robot.subsystems.IntakeSubSystem IntakeSubSystem = new frc.robot.subsystems.IntakeSubSystem();
   public static OI oi;
 
   Command autonomousCommand;
