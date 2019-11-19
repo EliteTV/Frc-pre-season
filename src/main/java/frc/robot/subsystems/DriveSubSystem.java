@@ -58,4 +58,13 @@ public class DriveSubSystem extends Subsystem {
     // Set the default command for a subsystem here.
     setDefaultCommand(new DriveManuleCommand());
   }
+  public void driveAuto (double move, double turn){
+    
+    if(move > RobotMap.maxMoveSpeed) move = RobotMap.maxMoveSpeed;
+    if(move < RobotMap.minMoveSpeed) move = RobotMap.minMoveSpeed;
+    if(turn > RobotMap.maxMoveSpeed) move = RobotMap.maxMoveSpeed;
+    if(turn < RobotMap.minMoveSpeed) move = RobotMap.minMoveSpeed;
+
+    drive.arcadeDrive(move, turn);
+  }
 }

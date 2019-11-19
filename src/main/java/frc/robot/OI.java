@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.autoDrive;
 import frc.robot.commands.intakeIn;
 import frc.robot.commands.intakeOut;
 
@@ -26,11 +27,12 @@ public class OI {
  
   public Button driverButtonX = new JoystickButton(driverController, RobotMap.driveXButton);
   public Button driverButtonA = new JoystickButton(driverController, RobotMap.driveAButton);
-  
+  public Button driverButtonY = new JoystickButton(driverController, RobotMap.driveYButton);
   
   public OI() {
     driverButtonX.whileHeld(new intakeIn());
     driverButtonA.whileHeld(new intakeOut());
+    driverButtonY.whenPressed(new autoDrive());
 
 
 
