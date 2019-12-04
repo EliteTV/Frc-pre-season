@@ -9,8 +9,13 @@ package frc.robot.subsystems;
 
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -20,11 +25,13 @@ import frc.robot.RobotMap;
  */
 
 public class IntakeSubSystem extends Subsystem {
-    
-  public double intakeSpeed = RobotMap.intakeSpeed;
   
-  WPI_VictorSPX intakeLM = new WPI_VictorSPX(RobotMap.intakeLM);
-  WPI_VictorSPX intakeRM = new WPI_VictorSPX(RobotMap.intakeRM);
+  public double intakeSpeed = RobotMap.intakeSpeed;
+  //private final DoubleSolenoid testSolenoid = new DoubleSolenoid( Robotmap.intakeSolenoidIn)
+  
+  WPI_TalonSRX intakeLM = new WPI_TalonSRX(RobotMap.intakeLM);
+  WPI_TalonSRX intakeRM = new WPI_TalonSRX(RobotMap.intakeRM);
+  DigitalInput intakeSWitch = new DigitalInput(RobotMap.intakeLS);
     
     public void setPower(double intakePower){
       intakeLM.set(intakePower);
@@ -40,10 +47,21 @@ public class IntakeSubSystem extends Subsystem {
       intakeLM.set(ControlMode.PercentOutput, -intakeSpeed);
       intakeRM.set(ControlMode.PercentOutput, intakeSpeed);
     }
+
+    public void stopIntake(){
+      intakeLM.set(ControlMode.PercentOutput, 0);
+      intakeRM.set(ControlMode.PercentOutput, 0);
+    }
     public void intakeWristUp(){
       
     }
     
+    public void intakeLS(){
+      while (intakeSWitch.get()){
+        Timer.delay(10);
+      } 
+      }
+
 
   @Override
   public void initDefaultCommand() {

@@ -34,7 +34,7 @@ public class autoDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.driveSubSystem.driveAuto(move, turn);
+    Robot.driveSubSystem.driveAuto(-move, turn);
   }
 
   // Make this return true when this Command no longer needs to run execute()

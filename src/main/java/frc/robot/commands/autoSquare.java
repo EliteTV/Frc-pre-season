@@ -14,9 +14,9 @@ public class autoSquare extends CommandGroup {
    * Add your docs here.
    */
   public autoSquare() {
-    addSequential(new autoDrive(.5, 0, .5));
-    addSequential(new autoDrive(0, 0, 10));
-    addSequential(new autoDrive (-.5 , 0, 0.5));
+    addSequential(new autoDrive(1, 0, 1));
+    addSequential(new autoDrive(0, 0, 1));
+    addSequential(new autoDrive (0 , .25, 1));
     
     
     

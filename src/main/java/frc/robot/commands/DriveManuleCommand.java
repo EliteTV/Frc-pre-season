@@ -27,7 +27,7 @@ public class DriveManuleCommand extends Command {
   protected void execute() {
     
 
-    double move = -Robot.oi.GetDriverRawAxis(RobotMap.leftStickY);
+    double move = Robot.oi.GetDriverRawAxis(RobotMap.leftStickY);
     double turn = Robot.oi.GetDriverRawAxis(RobotMap.rightStickX);
     Robot.driveSubSystem.manualDrive(move, turn);
   
